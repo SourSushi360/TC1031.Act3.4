@@ -1,3 +1,8 @@
+/*  Node.cpp
+    Jean Paul López Pándura
+    
+    Última modificación: 02/11/2023
+    Desarrolla las funciones declaradas en el header Node.hpp */
 #include "Node.hpp"
 
 // Constructors & destructors

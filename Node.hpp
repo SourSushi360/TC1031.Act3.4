@@ -2,14 +2,15 @@
     Jean Paul López Pándura
     
     Última modificación: 02/11/2023
-    Este header declara las funciones de Node, una clase que guarda una IP y*/
+    Este header declara las funciones y atributos de Node */
 #ifndef NODE_HPP
 #define NODE_HPP
 
 #include <string>
 #include <sstream>
-class Node
-{
+/*  una clase que guarda un string con el valor de una IP, y un dato que
+    representa la cantidad de veces que apareció en la bitácora */
+class Node {
   private:
     std::string *ip;
     int *data;
