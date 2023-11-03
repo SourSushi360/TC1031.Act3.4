@@ -45,6 +45,7 @@ Node* Node::getRight() {
 // setters
 void Node::setData(int data,std::string ip) {
     *this->data = data;
+    *this->ip = ip;
 }
 void Node::setHeight(int height) {
     *this->height = height;
@@ -75,6 +76,16 @@ bool Node::isBigger(std::string ip) {
     std::getline(IPb,auxB,':');
     return ipa < ipb;
 }
+bool Node::isEqual(std::string ip) {
+    std::string auxA, auxB;
+    int ipa, ipb;
+    std::stringstream IPa(ip),IPb(*this->ip);
+}
 void Node::updateData() {
-    *this->data++;
+    *this->data = this->getData() + 1;
+}
+
+// print
+void Node::print() {
+    std::cout << *this->ip << " - aparece " << this->getData() << " veces\n";
 }

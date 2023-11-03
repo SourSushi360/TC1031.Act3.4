@@ -10,7 +10,7 @@
     la dirección IP y la cantidad de veces que aparece en la bitácora */
 #include "classes/AVL.hpp"
 #include <fstream>
-
+#include <vector>
 int main() {
     AVL avl;
     // lectura de los datos

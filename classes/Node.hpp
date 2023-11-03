@@ -6,7 +6,7 @@
 #ifndef NODE_HPP
 #define NODE_HPP
 
-#include <string>
+#include <iostream>
 #include <sstream>
 /*  una clase que guarda un string con el valor de una IP, y un dato que
     representa la cantidad de veces que apareció en la bitácora */
@@ -36,9 +36,12 @@ class Node {
     /*  Destructor */
     ~Node();
 
-    /*  compara el valor de una IP con la del nodo recibido
+    /*  compara el valor de su IP con la del nodo recibido
         regresa true si es mayor, false si es menor */
     bool isBigger(std::string ip);
+    /*  compara el valor de su IP con la del nodo recibido
+        regresa true si es igual, false si es diferente */
+    bool isEqual(std::string ip);
     /*  le suma uno a la cantidad de veces que ha aparecido la IP */
     void updateData();
 
@@ -60,5 +63,7 @@ class Node {
     void setHeight(int height);
     /*  regresa la altura del nodo */
     int getHeight();
+    /*  imprime en formato al nodo */
+    void print();
 };
 #endif /* NODE_HPP */

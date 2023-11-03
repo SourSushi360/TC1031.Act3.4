@@ -65,13 +65,13 @@ Node* AVL::insert(Node *node,std::string ip) {
     if (node == nullptr) {
         Node *newNode = new Node(1,ip);
         return newNode;
-    } if (node->isBigger(ip)) {
-        node->setLeft(insert(node->getLeft(),ip));
-    } else if (node->isBigger(ip)) {
-        node->setRight(insert(node->getRight(),ip));
-    } else {
+    } if (node->isEqual(ip)) {
         node->updateData();
         return node;
+    } else if (node->isBigger(ip)) {
+        node->setLeft(insert(node->getLeft(),ip));
+    } else if (!node->isBigger(ip)) {
+        node->setRight(insert(node->getRight(),ip));
     }
 
     // actualiza la altura
@@ -109,7 +109,7 @@ int AVL::height() {
     // print helper
 void preorder(Node *node) {
     if (node != nullptr) {
-        std::cout << node->getData() << " ";
+        node->print();
         preorder(node->getLeft());
         preorder(node->getRight());
     }
