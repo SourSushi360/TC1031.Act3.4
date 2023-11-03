@@ -20,13 +20,18 @@ int main() {
     while (getline(bitacora,line)) {
         std::stringstream streamA(line);
         std::string ip;
-        for (int i=0;i <= 3;i++){
+        for (int i=0;i <= 3;i++) {
             std::getline(streamA,ip,' ');
+        }
+        std::stringstream streamB(ip);
+        for (int i=0;i < 2;i++) {
+            std::getline(streamB,ip,':');
         }
         avl.insert(ip);
     }
 
     bitacora.close();
+    avl.print();
 
     return 1;
 }

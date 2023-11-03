@@ -6,15 +6,15 @@
 #include "Node.hpp"
 
 // Constructors & destructors
-Node::Node(int data,std::string ip) {
-    this->ip = new std::string(ip);
+Node::Node(int data,int ip) {
+    this->ip = new int(ip);
     this->data = new int(data);
     this->height = new int(0);
     this->left = nullptr;
     this->right = nullptr;
 }
 Node::Node() {
-    this->ip = new std::string;
+    this->ip = new int;
     this->data = new int;
     this->height = new int(0);
     this->left = nullptr;
@@ -43,7 +43,7 @@ Node* Node::getRight() {
 }
 
 // setters
-void Node::setData(int data,std::string ip) {
+void Node::setData(int data,int ip) {
     *this->data = data;
     *this->ip = ip;
 }
@@ -58,25 +58,10 @@ void Node::setRight(Node *right) {
 }
 
 // operations
-bool Node::isBigger(std::string ip) {
-    std::string auxA, auxB;
-    int ipa, ipb;
-    std::stringstream IPa(ip),IPb(*this->ip);
-    for (int i = 0;i < 3;i++){
-        std::getline(IPa,auxA,'.');
-        std::getline(IPb,auxB,'.');
-        ipa = stoi(auxA);
-        ipb = stoi(auxB);
-        if (ipa != ipb) {
-            return ipa < ipb;
-        }
-    }
-
-    std::getline(IPa,auxA,':');
-    std::getline(IPb,auxB,':');
-    return ipa < ipb;
+bool Node::isBigger(int ip) {
+    return *this->ip < ip;
 }
-bool Node::isEqual(std::string ip) {
+bool Node::isEqual(int ip) {
     return *this->ip == ip;
 }
 void Node::updateData() {

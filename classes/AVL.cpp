@@ -60,7 +60,7 @@ Node* AVL::rotateLeft(Node* x) {
 }
 
 // insert node from AVL
-Node* AVL::insert(Node *node,std::string ip) {
+Node* AVL::insert(Node *node,int ip) {
     // busca el lugar vacío para el nodo
     if (node == nullptr) {
         Node *newNode = new Node(1,ip);
@@ -101,7 +101,8 @@ Node* AVL::insert(Node *node,std::string ip) {
 
 // public methods
 void AVL::insert(std::string ip) {
-    this->root = insert(this->root,ip);
+    int strIP = std::stoi(ip);
+    this->root = insert(this->root,strIP);
 }
 int AVL::height() {
     return this->root->getHeight();

@@ -30,7 +30,7 @@ class AVL {
         /*  recibe un nodo y regresa el subnodo más pequeño a su derecha */
         Node* findMinNode(Node *node);
         /*  función de apoyo para el insert principal, permite ser recursivo */
-        Node* insert(Node* node, std::string ip);
+        Node* insert(Node* node, int ip);
     public:
         /*  Constructor default */
         AVL();

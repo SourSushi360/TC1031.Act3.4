@@ -14,7 +14,7 @@ class Node {
   private:
     /*  representa el valor de la ip
         es el key value */
-    std::string *ip;
+    int *ip;
     /*  representa cuantas veces ha aparecido el valor
         es el número de accesos*/
     int *data;
@@ -31,24 +31,24 @@ class Node {
     /*  Constructor con parámetros
         - recibe un int que representa las veces que se repite la IP
         - recibe un string con la IP */
-    Node(int data,std::string ip);
+    Node(int data,int ip);
 
     /*  Destructor */
     ~Node();
 
     /*  compara el valor de su IP con la del nodo recibido
         regresa true si es mayor, false si es menor */
-    bool isBigger(std::string ip);
+    bool isBigger(int ip);
     /*  compara el valor de su IP con la del nodo recibido
         regresa true si es igual, false si es diferente */
-    bool isEqual(std::string ip);
+    bool isEqual(int ip);
     /*  le suma uno a la cantidad de veces que ha aparecido la IP */
     void updateData();
 
     /*  cambia los valores del nodo
         - recibe un int que representa las veces que se repite la IP
         - recibe un string con la IP */
-    void setData(int data,std::string ip);
+    void setData(int data,int ip);
     /*  regresa el número de veces que aparece la ip en bitácora */
     int  getData();
     /*  cambia el nodo a la derecha, o 'mayor' */
