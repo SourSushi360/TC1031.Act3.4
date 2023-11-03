@@ -34,6 +34,9 @@ Node* AVL::findMinNode(Node *node) {
     
     return aux;
 }
+Node* AVL::getRoot() {
+    return this->root;
+}
 
 // procesos de ordenamiento
 Node* AVL::rotateRight(Node* y) {
@@ -106,15 +109,4 @@ void AVL::insert(std::string ip) {
 }
 int AVL::height() {
     return this->root->getHeight();
-}
-    // print helper
-void preorder(Node *node) {
-    if (node != nullptr) {
-        node->print();
-        preorder(node->getLeft());
-        preorder(node->getRight());
-    }
-}
-void AVL::print() {
-    preorder(this->root);
 }
