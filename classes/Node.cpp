@@ -32,6 +32,9 @@ Node::~Node() {
 int Node::getData() {
     return *this->data;
 }
+int Node::getPort() {
+    return *this->ip;
+}
 int Node::getHeight() {
     return *this->height;
 }

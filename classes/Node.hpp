@@ -51,6 +51,8 @@ class Node {
     void setData(int data,int ip);
     /*  regresa el número de veces que aparece la ip en bitácora */
     int  getData();
+    /*  regresa el número del puerto */
+    int getPort();
     /*  cambia el nodo a la derecha, o 'mayor' */
     void setRight(Node* node);
     /*  regresa un puntero al nodo de la derecha */
