@@ -106,3 +106,14 @@ void AVL::insert(std::string ip) {
 int AVL::height() {
     return this->root->getHeight();
 }
+    // print helper
+void preorder(Node *node) {
+    if (node != nullptr) {
+        std::cout << node->getData() << " ";
+        preorder(node->getLeft());
+        preorder(node->getRight());
+    }
+}
+void AVL::print() {
+    preorder(this->root);
+}

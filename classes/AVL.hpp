@@ -41,5 +41,7 @@ class AVL {
         void insert(std::string ip);
         /*  función que regresa la altura del AVL */
         int height();
+        /*  función que imprime en preorder */
+        void print();
 };
 #endif /* AVL_HPP */
