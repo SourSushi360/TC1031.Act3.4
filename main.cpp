@@ -28,7 +28,7 @@ int main() {
     }
     */
     Node node;
-    for (int i=0;i < 5000;i++) {
+    for (int i=0;i < 16000;i++) {
         getline(bitacora,line);
         std::stringstream streamA(line);
         std::string ip;
