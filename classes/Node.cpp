@@ -1,7 +1,7 @@
 /*  Node.cpp
     Jean Paul López Pándura
     
-    Última modificación: 02/11/2023
+    Última modificación: 03/11/2023
     Desarrolla las funciones declaradas en el header Node.hpp */
 #include "Node.hpp"
 
@@ -57,34 +57,24 @@ void Node::setRight(Node *right) {
 }
 
 // operations
-bool Node::compareIp(Node* ptr) {
-    std::stringstream streamA(*ptr->ip), streamB(*this->ip);
-    std::string ipA, ipB, auxA, auxB;
+bool Node::isBigger(std::string ip) {
+    std::string auxA, auxB;
     int ipa, ipb;
-    for (int i=0;i <= 3;i++){
-        std::getline(streamA,ipA,' ');
-    }
-    for (int i=0;i <= 3;i++){
-        std::getline(streamB,ipB,' ');
-    }
-    std::stringstream IPa(ipA),IPb(ipB);
+    std::stringstream IPa(ip),IPb(*this->ip);
     for (int i = 0;i < 3;i++){
         std::getline(IPa,auxA,'.');
         std::getline(IPb,auxB,'.');
         ipa = stoi(auxA);
         ipb = stoi(auxB);
-        if (ipa < ipb){
-            return true;
-        } else if (ipa > ipb){
-            return false;
+        if (ipa != ipb) {
+            return ipa < ipb;
         }
     }
 
     std::getline(IPa,auxA,':');
     std::getline(IPb,auxB,':');
-    if (ipa < ipb){
-            return true;
-    } else {
-        return false;
-    }
+    return ipa < ipb;
+}
+void Node::updateData() {
+    *this->data++;
 }

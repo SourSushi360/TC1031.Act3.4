@@ -1,13 +1,16 @@
 /*  AVL.hpp
     Jean Paul López Pándura
 
-    Última modificación: 02/31/2023
+    Última modificación: 03/31/2023
     Un header que declara las funciones y atributos de la clase AVL,
-    el cual es un árbol binario autobalanceado */
+    el cual es un árbol binario autobalanceado conformado de nodos */
 #ifndef AVL_HPP
 #define AVL_HPP
 
 #include "Node.hpp"
+#include <iostream>
+/*  Una clase que actúa como un árbol binario autobalanceado,
+    Está conformada de Nodos */
 class AVL {
     private:
         /*  el nodo raíz */
@@ -27,9 +30,7 @@ class AVL {
         /*  recibe un nodo y regresa el subnodo más pequeño a su derecha */
         Node* findMinNode(Node *node);
         /*  función de apoyo para el insert principal, permite ser recursivo */
-        Node* insert(Node* node, int val);
-        /*  función de apoyo para el remove principal, permite ser recursivo */
-        Node* remove(Node* node, int val);
+        Node* insert(Node* node, std::string ip);
     public:
         /*  Constructor default */
         AVL();
