@@ -59,7 +59,7 @@ Node* AVL::rotateLeft(Node* x) {
     return y;
 }
 
-// insert & remove node from AVL
+// insert node from AVL
 Node* AVL::insert(Node *node,std::string ip) {
     // busca el lugar vacío para el nodo
     if (node == nullptr) {
