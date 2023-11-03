@@ -12,7 +12,11 @@
     representa la cantidad de veces que apareció en la bitácora */
 class Node {
   private:
+    /*  representa el valor de la ip
+        es el key value */
     std::string *ip;
+    /*  representa cuantas veces ha aparecido el valor
+        es el número de accesos*/
     int *data;
 
     int *height;
