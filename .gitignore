@@ -2,3 +2,4 @@
 .vscode/
 # ignore all files inside build
 build/
+extra/

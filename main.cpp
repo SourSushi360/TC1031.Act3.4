@@ -17,7 +17,19 @@ int main() {
     std::ifstream bitacora ("bitacora3.txt");
     std::string line;
     
+    /*
     while (getline(bitacora,line)) {
+        std::stringstream streamA(line);
+        std::string ip;
+        for (int i=0;i <= 3;i++){
+            std::getline(streamA,ip,' ');
+        }
+        avl.insert(ip);
+    }
+    */
+    Node node;
+    for (int i=0;i < 5000;i++) {
+        getline(bitacora,line);
         std::stringstream streamA(line);
         std::string ip;
         for (int i=0;i <= 3;i++){
