@@ -62,6 +62,7 @@ bool Heap::isEmpty() {
 int Heap::size() {
     return heapArray.size();
 }
+/*
 // print helper
 void preorder(int index,std::vector<int> heapArray) {
     if (index < heapArray.size()) {
@@ -114,3 +115,4 @@ void Heap::print (int option) {
             std::cout << "opcion invalida\n";
     }
 }
+*/

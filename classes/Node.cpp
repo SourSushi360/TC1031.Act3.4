@@ -62,7 +62,7 @@ bool Node::isBigger(std::string ip) {
     std::string auxA, auxB;
     int ipa, ipb;
     std::stringstream IPa(ip),IPb(*this->ip);
-    for (int i = 0;i < 3;i++){
+    for (int i = 0;i < 2;i++){
         std::getline(IPa,auxA,'.');
         std::getline(IPb,auxB,'.');
         ipa = stoi(auxA);
@@ -77,9 +77,7 @@ bool Node::isBigger(std::string ip) {
     return ipa < ipb;
 }
 bool Node::isEqual(std::string ip) {
-    std::string auxA, auxB;
-    int ipa, ipb;
-    std::stringstream IPa(ip),IPb(*this->ip);
+    return *this->ip == ip;
 }
 void Node::updateData() {
     *this->data = this->getData() + 1;
