@@ -27,4 +27,9 @@ int main() {
     }
 
     bitacora.close();
+    
+    // print de los datos en orden
+    avl.print();
+
+    return 1;
 }

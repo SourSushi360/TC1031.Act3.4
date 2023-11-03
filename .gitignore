@@ -1,2 +1,4 @@
 # ignore all files inside .vscode
 .vscode/
+# ignore all files inside build
+build/
