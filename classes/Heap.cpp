@@ -19,7 +19,7 @@ Heap::~Heap(){};
 void Heap::heapifyUp(int index) {
   while (index > 0) {
     int parentIndex = (index - 1) / 2;
-    if (heapArray[index]->isBigger(heapArray[parentIndex]->getIp())) {
+    if (heapArray[index]->getData() > heapArray[parentIndex]->getData()) {
       std::swap(heapArray[index], heapArray[parentIndex]);
       index = parentIndex;
     } else {
@@ -32,23 +32,27 @@ void Heap::heapifyUp(int index) {
 // Función para bajar un elemento en el montículo
 void Heap::heapifyDown(int index) {
   int size = heapArray.size();
-  int left, right, largest;
-  do {
-    left = 2 * index + 1;
-    right = 2 * index + 2;
-    largest = index;
+  
+  while (true) {
+    int largest = index;
+    int left = 2 * index + 1;
+    int right = 2 * index + 2;
 
-    if (left < size && heapArray[left]->isBigger(heapArray[largest]->getIp())) {
+    if (left < size && heapArray[left]->getData() > heapArray[largest]->getData()) {
       largest = left;
     }
-    if (right < size && heapArray[right]->isBigger(heapArray[largest]->getIp())) {
+
+    if (right < size && heapArray[right]->getData() > heapArray[largest]->getData()) {
       largest = right;
     }
-    if (largest != index) {
-      std::swap(heapArray[index], heapArray[largest]);
-      index = largest;
+
+    if (largest == index) {
+      break;
     }
-  } while (largest != index);
+
+    std::swap(heapArray[index], heapArray[largest]);
+    index = largest;
+  }
   // Complejidad: O(log n), donde "n" es el número de elementos en el montículo.
 }
 
@@ -63,8 +67,8 @@ void Heap::insert(Node *node) {
 // public
 
 // Obtener el elemento máximo del montículo
-std::string Heap::getMax() {
-  return heapArray[0]->getIp();
+Node* Heap::getMax() {
+  return heapArray[0];
   // Complejidad: O(1), ya que siempre se devuelve el primer elemento del
   // montículo.
 }
@@ -128,6 +132,11 @@ void levelByLevel(const std::vector<Node*> &heapArray) {
 
 // Imprimir el montículo nivel por nivel
 void Heap::print() {
-  levelByLevel(heapArray);
-  // Complejidad: O(n), donde "n" es el número de elementos en el montículo.
+    Node* aux;
+    for (int i = 0;i < this->size();i++) {
+        aux = this->getMax();
+        aux->print();
+        this->deleteMax();
+    }
+    // Complejidad: O(n), donde "n" es el número de elementos en el montículo.
 }

@@ -33,7 +33,7 @@ public:
     ~Heap();  
 
     /*  Regresa el valor del elemento Máximo (raíz) del MAX heap */
-    std::string getMax();
+    Node* getMax();
     /*  Borra el elemento Máximo(Raiz) del MAX heap */
     void deleteMax();
     /*  Regresa true si el heap está vacío */
