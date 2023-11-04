@@ -82,5 +82,5 @@ void Node::updateData() {
 
 // print
 void Node::print() {
-    std::cout << *this->ip << " - aparece " << this->getData() << " veces\n";
+    std::cout << *this->ip << "," << this->getData() << "\n";
 }

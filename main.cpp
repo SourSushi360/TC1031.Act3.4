@@ -23,8 +23,11 @@ int main() {
         for (int i=0;i <= 3;i++){
             std::getline(streamA,ip,' ');
         }
+        std::stringstream streamB(ip);
+        std::getline(streamB,ip,':');
         avl.insert(ip);
     }
+    avl.print();
 
     bitacora.close();
 
