@@ -19,7 +19,7 @@ Heap::~Heap(){};
 void Heap::heapifyUp(int index) {
   while (index > 0) {
     int parentIndex = (index - 1) / 2;
-    if (heapArray[index]->getData() > heapArray[parentIndex]->getData()) {
+    if (heapArray[index]->getData() < heapArray[parentIndex]->getData()) {
       std::swap(heapArray[index], heapArray[parentIndex]);
       index = parentIndex;
     } else {
@@ -38,11 +38,11 @@ void Heap::heapifyDown(int index) {
     int left = 2 * index + 1;
     int right = 2 * index + 2;
 
-    if (left < size && heapArray[left]->getData() > heapArray[largest]->getData()) {
+    if (left < size && heapArray[left]->getData() < heapArray[largest]->getData()) {
       largest = left;
     }
 
-    if (right < size && heapArray[right]->getData() > heapArray[largest]->getData()) {
+    if (right < size && heapArray[right]->getData() < heapArray[largest]->getData()) {
       largest = right;
     }
 
@@ -133,7 +133,8 @@ void levelByLevel(const std::vector<Node*> &heapArray) {
 // Imprimir el montículo nivel por nivel
 void Heap::print() {
     Node* aux;
-    for (int i = 0;i < this->size();i++) {
+    int size = this->size();
+    for (int i = 0;i < size;i++) {
         aux = this->getMax();
         aux->print();
         this->deleteMax();
