@@ -71,9 +71,6 @@ bool Node::isBigger(std::string ip) {
             return ipa < ipb;
         }
     }
-
-    std::getline(IPa,auxA,':');
-    std::getline(IPb,auxB,':');
     return ipa < ipb;
 }
 bool Node::isEqual(std::string ip) {
