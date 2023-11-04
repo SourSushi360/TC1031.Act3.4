@@ -51,7 +51,7 @@ void Heap::insert(Node *node) {
 }
 // public
 int Heap::getMax() {
-    return heapArray[0].port;
+    return heapArray[0].count;
 }
 void Heap::deleteMax() {
     if (isEmpty()) {
