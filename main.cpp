@@ -9,6 +9,7 @@
     El proceso va a almacenar estos registros en un AVL, el cual recordará
     la dirección IP y la cantidad de veces que aparece en la bitácora */
 #include "classes/AVL.hpp"
+#include "classes/Heap.hpp"
 #include <fstream>
 #include <vector>
 int main() {
@@ -27,9 +28,13 @@ int main() {
         std::getline(streamB,ip,':');
         avl.insert(ip);
     }
-    avl.print();
 
     bitacora.close();
+
+    // agrega el heap
+    Heap heap;
+    heap.extract(avl.getRoot());
+    heap.print();
 
     return 1;
 }

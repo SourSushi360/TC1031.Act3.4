@@ -43,5 +43,7 @@ class AVL {
         int height();
         /*  función que imprime en preorder */
         void print();
+        /*  funcion que regresa la raíz del AVL */
+        Node* getRoot();
 };
 #endif /* AVL_HPP */

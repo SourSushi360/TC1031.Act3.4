@@ -34,6 +34,9 @@ Node* AVL::findMinNode(Node *node) {
     
     return aux;
 }
+Node* AVL::getRoot() {
+    return this->root;
+}
 
 // procesos de ordenamiento
 Node* AVL::rotateRight(Node* y) {

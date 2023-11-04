@@ -50,7 +50,9 @@ class Node {
         - recibe un string con la IP */
     void setData(int data,std::string ip);
     /*  regresa el número de veces que aparece la ip en bitácora */
-    int  getData();
+    int getData();
+    /*  regresa un string con la IP */
+    std::string getIp();
     /*  cambia el nodo a la derecha, o 'mayor' */
     void setRight(Node* node);
     /*  regresa un puntero al nodo de la derecha */

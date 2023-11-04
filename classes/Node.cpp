@@ -41,6 +41,9 @@ Node* Node::getLeft() {
 Node* Node::getRight() {
     return this->right;
 }
+std::string Node::getIp() {
+    return *this->ip;
+}
 
 // setters
 void Node::setData(int data,std::string ip) {
